@@ -17,7 +17,7 @@ erDiagram
         timestamp timestamp "打刻日時 (顔打刻日時)"
         varchar status "出勤ステータス (ON_TIME / LATE)"
     }
-
+```
 
 ### 👥 1. `employees` テーブル 
 | 論理名 | 物理名 | 型 | 制約 | 備考 |
