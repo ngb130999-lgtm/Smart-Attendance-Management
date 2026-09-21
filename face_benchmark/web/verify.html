@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>
+        Kinetic HR - Face Benchmark
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="/css/style.css"
+    >
+</head>
+
+<body>
+
+<main>
+
+    <h1>顔認証モデル検証</h1>
+
+    <label>
+        実際の人物
+    </label>
+
+    <select id="actualPerson">
+        <option value="person_001">
+            person_001
+        </option>
+
+        <option value="person_002">
+            person_002
+        </option>
+
+        <option value="person_003">
+            person_003
+        </option>
+
+        <option value="person_004">
+            person_004
+        </option>
+    </select>
+
+
+    <label>
+        撮影条件
+    </label>
+
+    <select id="condition">
+
+        <option value="front">
+            正面
+        </option>
+
+        <option value="left">
+            左向き
+        </option>
+
+        <option value="right">
+            右向き
+        </option>
+
+        <option value="glasses">
+            眼鏡
+        </option>
+
+        <option value="bright">
+            明所
+        </option>
+
+        <option value="dark">
+            暗所
+        </option>
+
+        <option value="near">
+            近距離
+        </option>
+
+        <option value="far">
+            遠距離
+        </option>
+
+    </select>
+
+
+    <section>
+
+        <video
+            id="camera"
+            width="640"
+            height="480"
+            autoplay
+            playsinline
+        ></video>
+
+    </section>
+
+
+    <button id="verifyButton">
+        顔認証
+    </button>
+
+
+    <h2>認証結果</h2>
+
+    <pre id="result"></pre>
+
+</main>
+
+
+<script src="/js/camera.js"></script>
+<script src="/js/verify.js"></script>
+
+</body>
+</html>

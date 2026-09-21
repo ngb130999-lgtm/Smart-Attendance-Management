@@ -1,0 +1,7 @@
+type nul > datasets\enroll\.gitkeep
+type nul > datasets\test\.gitkeep
+type nul > models\.gitkeep
+type nul > results\raw\.gitkeep
+type nul > results\metrics\.gitkeep
+type nul > results\charts\.gitkeep
+type nul > reports\.gitkeep

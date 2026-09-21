@@ -1,0 +1,22 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Face recognition models
+face_benchmark/models/*
+!face_benchmark/models/.gitkeep
+
+# Face datasets
+face_benchmark/datasets/*
+!face_benchmark/datasets/.gitkeep
+
+# Embeddings
+*.npy
+*.npz
+
+# Results containing personal data
+face_benchmark/results/private/
+
+# Environment
+.env

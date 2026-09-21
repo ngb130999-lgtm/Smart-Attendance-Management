@@ -1,0 +1,29 @@
+# Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Face embeddings
+data/embeddings/*
+!data/embeddings/.gitkeep
+
+# Raw biometric data
+*.npy
+*.npz
+
+# AI model files
+*.onnx
+
+# Environment
+.env
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+Thumbs.db
+.DS_Store

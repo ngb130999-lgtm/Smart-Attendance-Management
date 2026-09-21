@@ -1,0 +1,25 @@
+model:
+  name: buffalo_l
+
+device:
+  providers:
+    - CUDAExecutionProvider
+    - CPUExecutionProvider
+
+detection:
+  width: 640
+  height: 640
+
+registration:
+  capture_count: 5
+
+recognition:
+  # Benchmark開始時の暫定値。
+  # 最終Thresholdは実測結果からモデル別に決定する。
+  threshold: 0.50
+
+storage:
+  embedding_root: data/embeddings
+
+benchmark:
+  results_root: results
