@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Kinetic HR - Face Benchmark
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="/css/style.css"
+    >
+</head>
+
+<body>
+
+<main>
+
+    <h1>
+        顔認証モデル検証
+    </h1>
+
+    <p>
+        事前Enrollment済みの顔Embeddingと
+        現在の顔を比較して、
+        顔認証モデルの性能を検証します。
+    </p>
+
+
+    <!-- ============================== -->
+    <!-- Benchmark Settings -->
+    <!-- ============================== -->
+
+    <section class="setting-section">
+
+        <h2>
+            Benchmark設定
+        </h2>
+
+
+        <!-- Model -->
+
+        <label for="modelSelect">
+            使用モデル
+        </label>
+
+        <select id="modelSelect">
+            <!--
+                JavaScriptから
+                /api/models を取得して
+                自動的に追加する
+            -->
+        </select>
+
+
+        <!-- Ground Truth -->
+
+        <label for="actualPerson">
+            実際の人物
+        </label>
+
+        <select id="actualPerson">
+
+            <option value="person_001">
+                person_001
+            </option>
+
+            <option value="person_002">
+                person_002
+            </option>
+
+            <option value="person_003">
+                person_003
+            </option>
+
+            <option value="person_004">
+                person_004
+            </option>
+
+            <option value="UNKNOWN">
+                未登録者
+            </option>
+
+        </select>
+
+
+        <!-- Condition -->
+
+        <label for="condition">
+            撮影条件
+        </label>
+
+        <select id="condition">
+
+            <option value="front">
+                正面
+            </option>
+
+            <option value="left">
+                左向き
+            </option>
+
+            <option value="right">
+                右向き
+            </option>
+
+            <option value="glasses">
+                眼鏡
+            </option>
+
+            <option value="bright">
+                明所
+            </option>
+
+            <option value="dark">
+                暗所
+            </option>
+
+            <option value="near">
+                近距離
+            </option>
+
+            <option value="far">
+                遠距離
+            </option>
+
+        </select>
+
+    </section>
+
+
+    <!-- ============================== -->
+    <!-- Camera -->
+    <!-- ============================== -->
+
+    <section class="camera-section">
+
+        <h2>
+            Camera
+        </h2>
+
+        <video
+            id="camera"
+            width="640"
+            height="480"
+            autoplay
+            playsinline>
+        </video>
+
+        <button
+            id="verifyButton"
+            type="button"
+        >
+            顔認証
+        </button>
+
+    </section>
+
+
+    <!-- ============================== -->
+    <!-- Recognition Result -->
+    <!-- ============================== -->
+
+    <section
+        id="recognitionResult"
+        class="recognition-result hidden"
+    >
+
+        <div id="statusIcon">
+        </div>
+
+        <h2 id="statusText">
+        </h2>
+
+        <p id="personResult">
+        </p>
+
+
+        <div class="score-information">
+
+            <p>
+                Actual Person:
+                <strong id="actualResult">
+                    -
+                </strong>
+            </p>
+
+
+            <p>
+                Predicted Person:
+                <strong id="predictedResult">
+                    -
+                </strong>
+            </p>
+
+
+            <p>
+                Outcome:
+                <strong id="outcomeResult">
+                    -
+                </strong>
+            </p>
+
+
+            <p>
+                Similarity:
+                <strong id="similarityResult">
+                    -
+                </strong>
+            </p>
+
+
+            <p>
+                Threshold:
+                <strong id="thresholdResult">
+                    -
+                </strong>
+            </p>
+
+
+            <p>
+                Rank:
+                <strong id="rankResult">
+                    -
+                </strong>
+            </p>
+
+
+            <p>
+                Second Best:
+                <strong id="secondBestResult">
+                    -
+                </strong>
+            </p>
+
+
+            <p>
+                Second Similarity:
+                <strong id="secondSimilarityResult">
+                    -
+                </strong>
+            </p>
+
+
+            <p>
+                Score Margin:
+                <strong id="marginResult">
+                    -
+                </strong>
+            </p>
+
+
+            <p>
+                Model:
+                <strong id="modelResult">
+                    -
+                </strong>
+            </p>
+
+
+            <p>
+                Latency:
+                <strong id="latencyResult">
+                    -
+                </strong>
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ============================== -->
+    <!-- Benchmark Score -->
+    <!-- ============================== -->
+
+    <section
+        id="benchmarkResult"
+        class="benchmark-result hidden"
+    >
+
+        <h2>
+            Benchmark Detail
+        </h2>
+
+        <p>
+            各登録者とのCosine Similarity
+        </p>
+
+
+        <table>
+
+            <thead>
+
+                <tr>
+                    <th>順位</th>
+                    <th>Person ID</th>
+                    <th>Similarity</th>
+                    <th>Threshold判定</th>
+                </tr>
+
+            </thead>
+
+
+            <tbody id="scoreTableBody">
+            </tbody>
+
+        </table>
+
+    </section>
+
+
+    <!-- ============================== -->
+    <!-- Error -->
+    <!-- ============================== -->
+
+    <section
+        id="errorResult"
+        class="error-result hidden"
+    >
+
+        <h2>
+            エラー
+        </h2>
+
+        <p id="errorMessage">
+        </p>
+
+    </section>
+
+</main>
+
+
+<script src="/js/camera.js"></script>
+<script src="/js/verify.js"></script>
+
+</body>
+
+</html>

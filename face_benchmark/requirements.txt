@@ -1,0 +1,29 @@
+# ============================================================
+# Kinetic HR - Face Recognition Benchmark
+# Windows / NVIDIA GPU
+# ============================================================
+
+# Face Recognition
+insightface==2.0
+
+# ONNX Runtime / GPU
+onnxruntime-gpu[cuda,cudnn]==1.30.0
+
+# Image Processing
+opencv-python==5.0.0.93
+
+# Numerical Computing
+numpy==2.5.3
+
+# Web API
+fastapi==0.141.1
+uvicorn[standard]==0.53.0
+python-multipart==0.0.32
+
+# Configuration
+PyYAML==6.0.3
+
+# Benchmark / Data Analysis
+pandas==3.0.6
+scikit-learn==1.9.1
+matplotlib==3.11.2

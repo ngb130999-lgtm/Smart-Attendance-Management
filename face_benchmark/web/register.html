@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Kinetic HR - Face Registration</title>
+
+    <link
+        rel="stylesheet"
+        href="/css/style.css"
+    >
+</head>
+
+<body>
+
+<main>
+
+    <h1>顔登録</h1>
+
+    <p>
+        Benchmark用の顔Embeddingを登録します。
+    </p>
+
+    <label for="personId">
+        Person ID
+    </label>
+
+    <input
+        id="personId"
+        type="text"
+        value="person_001"
+    >
+
+    <video
+        id="camera"
+        width="640"
+        height="480"
+        autoplay
+        playsinline>
+    </video>
+
+    <button id="registerButton">
+        顔を登録
+    </button>
+
+    <pre id="result"></pre>
+
+</main>
+
+<script src="/js/camera.js"></script>
+<script src="/js/register.js"></script>
+
+</body>
+</html>
