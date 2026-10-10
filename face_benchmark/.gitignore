@@ -1,0 +1,26 @@
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Biometric source data
+data/enrollment/*
+!data/enrollment/.gitkeep
+
+data/test/*
+!data/test/.gitkeep
+
+# Face embeddings
+data/embeddings/*
+!data/embeddings/.gitkeep
+
+*.npy
+*.npz
+
+# Models
+models/*
+!models/.gitkeep
+
+.env
+.vscode/
+.idea/

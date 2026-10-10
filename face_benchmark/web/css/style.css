@@ -1,0 +1,170 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f4f4f4;
+}
+
+main {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background: white;
+}
+
+video {
+    display: block;
+    margin: 20px 0;
+    background: black;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+input,
+select,
+button {
+    margin-top: 8px;
+    padding: 10px;
+}
+
+button {
+    cursor: pointer;
+}
+
+pre {
+    padding: 20px;
+    background: #eeeeee;
+    overflow-x: auto;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* =========================
+   Recognition Result
+========================= */
+
+.recognition-result {
+    margin-top: 30px;
+    padding: 30px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+
+/*
+ * Success
+ */
+
+.recognition-success {
+    border: 3px solid #198754;
+    background: #eaf7ef;
+}
+
+
+/*
+ * Failure
+ */
+
+.recognition-failure {
+    border: 3px solid #dc3545;
+    background: #fdecec;
+}
+
+
+#statusIcon {
+    font-size: 64px;
+    font-weight: bold;
+}
+
+
+.recognition-success #statusIcon {
+    color: #198754;
+}
+
+
+.recognition-failure #statusIcon {
+    color: #dc3545;
+}
+
+
+#statusText {
+    font-size: 32px;
+    margin: 10px 0;
+}
+
+
+#personResult {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+.score-information {
+    margin-top: 20px;
+}
+
+
+/* =========================
+   Benchmark
+========================= */
+
+.benchmark-result {
+    margin-top: 30px;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+
+th,
+td {
+    padding: 12px;
+    border: 1px solid #dddddd;
+    text-align: center;
+}
+
+
+th {
+    background: #eeeeee;
+}
+
+
+.best-score {
+    font-weight: bold;
+    background: #fff8d6;
+}
+
+
+/* =========================
+   Error
+========================= */
+
+.error-result {
+    margin-top: 30px;
+    padding: 20px;
+
+    border: 2px solid #dc3545;
+
+    background: #fdecec;
+
+    border-radius: 8px;
+}
+
+.recognition-warning {
+    border: 3px solid #f0ad4e;
+    background: #fff8e6;
+}
+
+.recognition-warning #statusIcon {
+    color: #f0ad4e;
+}
