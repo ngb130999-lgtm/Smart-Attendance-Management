@@ -1243,3 +1243,6 @@ Offline Benchmark
 また、顔画像・Embeddingなどの生体情報についてはGitHubの公開Repositoryへ保存しない。
 
 公開ポートフォリオでは、可能な限り匿名化・集計したBenchmark結果のみ掲載する。
+
+
+
